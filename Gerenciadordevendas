@@ -5,28 +5,42 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int vendas;
+        int opcao;
 
         do {
- System.out.println("Olá caro usuário,seja muito bem vindo ");
-            
-System.out.println("Para continuar ");
-           System.out.println("Escolha uma das opções abaixo:");
-
-          System.out.println("1.Acesso a quantidade de Livros");
+            System.out.println("Olá caro usuário, seja muito bem-vindo!");
+            System.out.println("Escolha uma das opções abaixo:");
+            System.out.println("1. Acesso a quantidade de Livros");
             System.out.println("2. Simulador de vendas");
-                  System.out.println("3. Formulário para cadastro de usuário e acesso;");
-                        System.out.println("4. Sair");
-                        System.out.print("Qual opção você deseja?: ");
-            vendas = scanner.nextInt();
+            System.out.println("3. Formulário para cadastro de usuário e acesso");
+            System.out.println("4. Sair");
+            System.out.print("Qual opção você deseja?: ");
+            opcao = scanner.nextInt();
             scanner.nextLine();
-switch (vendas) {
+
+            switch (opcao) {
                 case 1:
-System.out.println( "livros e preços e informações:");
+                    System.out.println("Livros e preços e informações:");
+                    escolherLivro();
+                    break;
+                case 2:
+                    simuladorVendas();
+                    break;
+                case 3:
+                    formularioUsuario();
+                    break;
+                case 4:
+                    System.out.println("Saindo...");
+                    break;
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
+            }
+        } while (opcao != 4);
 
+        scanner.close();
+    }
 
-public class EscolhaDeLivro {
-    public static void main(String[] args) {
+    public static void escolherLivro() {
         Scanner scanner = new Scanner(System.in);
         int escolha;
 
@@ -37,8 +51,9 @@ public class EscolhaDeLivro {
 
         escolha = scanner.nextInt();
 
-                        case 1:
-System.out.println("Você escolheu: Alice no País das Maravilhas");
+        switch (escolha) {
+            case 1:
+                System.out.println("Você escolheu: Alice no País das Maravilhas");
                 break;
             case 2:
                 System.out.println("Você escolheu: O Marinheiro");
@@ -49,18 +64,11 @@ System.out.println("Você escolheu: Alice no País das Maravilhas");
             default:
                 System.out.println("Opção inválida");
         }
+
+        scanner.close();
     }
-}
 
-
-
-
- }
-break;               
-                case 2:
-                    
-                    System.out.println("Opção 2 escolhida: Simulador de vendas");
-                    
+    public static void simuladorVendas() {
         Scanner scanner = new Scanner(System.in);
 
         // Definindo os produtos e seus preços
@@ -116,15 +124,8 @@ break;
         // Fechando o scanner
         scanner.close();
     }
-}
 
-             break;
-                                
-                    // Formulário
-                    case 3:
-
-public class FormularioUsuario {
-    public static void main(String[] args) {
+    public static void formularioUsuario() {
         Scanner scanner = new Scanner(System.in);
         List<Usuario> usuarios = new ArrayList<>();
 
@@ -178,23 +179,3 @@ class Usuario {
         return telefone;
     }
 }
-
-                    break;
-
-             case 4:
-                    
-                     
-      break;
-                default:
-                    System.out.println("Opção inválida. Tente novamente.");
-            }
-        } while (vendas != 4);
-
-        scanner.close();
-    }
-}
-
-
-
-
-
